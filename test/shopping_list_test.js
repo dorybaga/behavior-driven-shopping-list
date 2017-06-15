@@ -17,8 +17,8 @@ describe('ShoppingListItem Class', function(){
     expect(shopList).to.be.a('function');
   });
 
-  it( 'should have a property named "name"', function(){
-    expect( shopList.name ).to.equal( 'onions' );
+  it( 'should have a property named onions', function(){
+    expect( grocery.name ).to.equal( 'onions' );
   } );
 
 });
