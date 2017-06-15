@@ -21,4 +21,8 @@ describe('ShoppingListItem Class', function(){
     expect( grocery.name ).to.equal( 'onions' );
   } );
 
+  it( 'should have a property named produce', function(){
+    expect( grocery.description ).to.equal( 'produce' );
+  } );
+
 });
