@@ -1,10 +1,10 @@
 /*jshint esversion: 6 */
 
 class ShoppingListItem {
-  constructor(name){
+  constructor(name, description, is_done ){
     this.name = name;
-    console.log(name);
-
+    this.description = description;
+    this.is_done = is_done;
   }
 }
 
