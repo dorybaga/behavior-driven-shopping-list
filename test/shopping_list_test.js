@@ -30,6 +30,13 @@ describe('ShoppingListItem Class', function(){
     expect( grocery.is_done ).to.equal( false );
   } );
 
+  it( 'should have a constructor method that accepts 2 arguments, name and description', function(){
+    var produceName = 'carrot';
+    var produceDescription = 'orange';
+    var grocery2 = new ShoppingListItem( produceName, produceDescription, false );
+    expect( grocery2.name ).to.equal( produceName );
+    expect( grocery2.description ).to.equal( produceDescription );
+  } );
 
 
 } );
@@ -37,14 +44,11 @@ describe('ShoppingListItem Class', function(){
 describe('check', function() {
   var shopList = ShoppingListItem;
   var grocery = new ShoppingListItem('onions', 'produce', false);
-
   it('should be a function', function(){
-    expect(shopList.check).to.be.a('function');
-
-  it('should set the is_done property to true', function() {
-    grocery.is_done = true;
+    expect(grocery.check).to.be.a('function');
   });
-
-
+  it('should set the is_done property to true', function() {
+    grocery.check();
+    expect( grocery.is_done ).to.equal( true );
   });
 });
