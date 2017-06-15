@@ -30,4 +30,9 @@ describe('ShoppingListItem Class', function(){
     expect( grocery.is_done ).to.equal( false );
   } );
 
+  it('should have a method check()', function(){
+    expect(shopList.check).to.be.a('function');
+    expect(shopList.check()).to.equal('true');
+  });
+
 });
