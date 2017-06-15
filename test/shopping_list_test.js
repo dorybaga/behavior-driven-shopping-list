@@ -10,7 +10,8 @@ describe('ShoppingListItem Class', function(){
   var grocery;
 
   beforeEach( function (){
-    grocery = new ShoppingListItem( 'onions' );
+    grocery = new ShoppingListItem( 'onions', 'produce', false );
+
   } );
 
   it('should be a Class', function(){
@@ -23,6 +24,10 @@ describe('ShoppingListItem Class', function(){
 
   it( 'should have a property named produce', function(){
     expect( grocery.description ).to.equal( 'produce' );
+  } );
+
+  it( 'should have a property name is_done', function(){
+    expect( grocery.is_done ).to.equal( false );
   } );
 
 });
