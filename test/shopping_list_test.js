@@ -1,4 +1,4 @@
-var chai = require('chai');
+var chai = require( 'chai' );
 
 var expect = chai.expect;
 var should = chai.should();
@@ -15,8 +15,8 @@ describe('ShoppingListItem Class', function(){
   } );
 
   it('should be a Class', function(){
-    expect(shopList).to.be.a('function');
-  });
+    expect( shopList ).to.be.a('function');
+  } );
 
   it( 'should have a property named onions', function(){
     expect( grocery.name ).to.equal( 'onions' );
@@ -30,9 +30,21 @@ describe('ShoppingListItem Class', function(){
     expect( grocery.is_done ).to.equal( false );
   } );
 
-  it('should have a method check()', function(){
+
+
+} );
+
+describe('check', function() {
+  var shopList = ShoppingListItem;
+  var grocery = new ShoppingListItem('onions', 'produce', false);
+
+  it('should be a function', function(){
     expect(shopList.check).to.be.a('function');
-    expect(shopList.check()).to.equal('true');
+
+  it('should set the is_done property to true', function() {
+    grocery.is_done = true;
   });
 
+
+  });
 });
