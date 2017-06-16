@@ -64,3 +64,17 @@ describe('uncheck', function() {
     expect( grocery.is_done ).to.equal( false );
   });
 });
+
+describe( 'render method', function (){
+  var grocery = new ShoppingListItem( 'onion', 'produce', false );
+  it( 'should be a function', function(){
+    expect(grocery.render).to.be.a('function');
+  });
+
+  it( 'render should return ...', function(){
+    expect(grocery.render).to.equal( '<li class="completed_false"><span>onion</span><span>produce</span></li>' );
+  });
+
+
+});
+
