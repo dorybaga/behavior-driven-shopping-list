@@ -52,3 +52,15 @@ describe('check', function() {
     expect( grocery.is_done ).to.equal( true );
   });
 });
+
+describe('uncheck', function() {
+  var shopList = ShoppingListItem;
+  var grocery = new ShoppingListItem('onions', 'produce', false);
+  it('should be a function', function(){
+    expect(grocery.check).to.be.a('function');
+  });
+  it('should set the is_done property to false', function() {
+    grocery.check();
+    expect( grocery.is_done ).to.equal( false );
+  });
+});
