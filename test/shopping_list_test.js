@@ -104,5 +104,18 @@ describe('ShoppingList Class', function(){
 
 });
 
+describe('addItem method', function(){
+  var list = new ShoppingList();
+  var item = new ShoppingListItem('onion', 'produce', false);
+  it('should be a function', function(){
+    expect(list.addItem).to.be.a('function');
+  });
+  it('should add item to items array', function(){
+    list.addItem(item);
+    expect (list.items).to.deep.equal(item);
+
+  });
+});
+
 
 
