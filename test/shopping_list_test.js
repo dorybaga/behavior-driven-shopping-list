@@ -152,6 +152,13 @@ describe('removeItem method', function(){
     expect( list.items ).to.deep.equal([item]);
   });
 
+  it('if no argument passed to removeItem it removes last item', function(){
+    var item3 = new ShoppingListItem('cheetos', 'other', false);
+    list.addItem(item3);
+    list.removeItem();
+    expect(list.items).to.deep.equal([item, item2]);
+  });
+
 });
 
 
