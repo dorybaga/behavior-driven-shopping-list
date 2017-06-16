@@ -117,10 +117,8 @@ describe('addItem method', function(){
     expect (list.items[0] instanceof ShoppingListItem).to.equal(true);
   });
 
-  it.skip('should not add the item to the items array if not an instance of ShoppingListItem', function(){
-    var notItem = 12;
-    expect(list.addItem(notItem)).to.be.an('error');
-    // expect(item).to.be.an.instanceof(ShoppingListItem);
+  it('should not add the item to the items array if not an instance of ShoppingListItem', function(){
+    expect(list.addItem).to.throw('Error');
   });
 
 });
@@ -157,6 +155,11 @@ describe('removeItem method', function(){
     list.addItem(item3);
     list.removeItem();
     expect(list.items).to.deep.equal([item, item2]);
+  });
+
+  it('item should be instance of ShoppingListItem', function(){
+    item.removeItem("carrot");
+    expect(item.removeItem).to.throw("Error");
   });
 
 });
