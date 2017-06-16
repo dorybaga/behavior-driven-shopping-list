@@ -1,0 +1,6 @@
+class ShoppingList {
+  constructor (){
+  }
+}
+
+
