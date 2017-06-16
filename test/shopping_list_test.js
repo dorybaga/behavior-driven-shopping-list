@@ -83,14 +83,23 @@ describe( 'render method', function (){
 
 describe('ShoppingList Class', function(){
   var myShopList = ShoppingList;
-  var list = new ShoppingList();
+  var list;
+
+  beforeEach( function (){
+    list = new ShoppingList('pencil');
+
+  } );
 
   it('should be a Class', function(){
-      expect( myShopList ).to.be.a('function');
+    expect( myShopList ).to.be.a('function');
   });
 
-  it('should have property named "items"', function(){
-    expect( list.items ).to.equal('[]');
+  it('should have a property named "items"', function(){
+    expect(list.items).to.equal('pencil');
+  });
+
+  it('should have a constructor method that initializes items as an empty array', function(){
+    expect( list.items ).to.be.an('Array');
   });
 
 });
