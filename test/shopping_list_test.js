@@ -147,6 +147,11 @@ describe('removeItem method', function(){
     expect( list.items ).to.deep.equal([item2]);
   } );
 
+  it( 'removeItem can remove items from items array', function(){
+    list.removeItem( 'garlic' );
+    expect( list.items ).to.deep.equal([item]);
+  });
+
 });
 
 
