@@ -1,10 +1,8 @@
-var chai = require( 'chai' );
-
 var expect = chai.expect;
 var should = chai.should();
 
-var ShoppingListItem = require('../js/shopping_list_item.js');
-var ShoppingList = require('../js/shopping_list.js');
+/*var ShoppingListItem = require('../js/shopping_list_item.js');
+var ShoppingList = require('../js/shopping_list.js');*/
 
 describe('ShoppingListItem Class', function(){
   var shopList = ShoppingListItem;
@@ -19,15 +17,15 @@ describe('ShoppingListItem Class', function(){
     expect( shopList ).to.be.a('function');
   } );
 
-  it( 'should have a property named onions', function(){
+  it( 'should have a property "name"', function(){
     expect( grocery.name ).to.equal( 'onions' );
   } );
 
-  it( 'should have a property named produce', function(){
+  it( 'should have a property "description"', function(){
     expect( grocery.description ).to.equal( 'produce' );
   } );
 
-  it( 'should have a property name is_done', function(){
+  it( 'should have a property"is_done"', function(){
     expect( grocery.is_done ).to.equal( false );
   } );
 
@@ -85,8 +83,17 @@ describe( 'render method', function (){
 
 describe('ShoppingList Class', function(){
   var myShopList = ShoppingList;
+  var list = new ShoppingList('[]');
+
   it('should be a Class', function(){
       expect( myShopList ).to.be.a('function');
   });
+
+  it('should have property named "items"', function(){
+    expect( list.items ).to.equal('[]');
+  });
+
 });
+
+
 
