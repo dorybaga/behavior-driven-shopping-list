@@ -139,12 +139,14 @@ describe('removeItem method', function(){
 
 
   it( 'removeItem is a function', function(){
-    expect( list.removeItem ).to.equal('function');
+    expect( list.removeItem ).to.be.a('function');
   });
+
   it( 'removeItem accepts one argument', function(){
     list.removeItem( 'onion', 'garlic' );
     expect( list.items ).to.deep.equal([item2]);
   } );
+
 });
 
 
