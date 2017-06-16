@@ -86,7 +86,7 @@ describe('ShoppingList Class', function(){
   var list;
 
   beforeEach( function (){
-    list = new ShoppingList('pencil');
+    list = new ShoppingList();
 
   } );
 
@@ -95,7 +95,7 @@ describe('ShoppingList Class', function(){
   });
 
   it('should have a property named "items"', function(){
-    expect(list.items).to.equal('pencil');
+    expect(list).to.have.property('items');
   });
 
   it('should have a constructor method that initializes items as an empty array', function(){
