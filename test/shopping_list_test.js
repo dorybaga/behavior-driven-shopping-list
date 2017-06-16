@@ -4,6 +4,7 @@ var expect = chai.expect;
 var should = chai.should();
 
 var ShoppingListItem = require('../js/shopping_list_item.js');
+var ShoppingList = require('../js/shopping_list.js');
 
 describe('ShoppingListItem Class', function(){
   var shopList = ShoppingListItem;
@@ -69,7 +70,6 @@ describe( 'render method', function (){
   var grocery = new ShoppingListItem( 'onion', 'produce', false );
 
   var result = grocery.render();
-  console.log(result);
 
   it( 'should be a function', function(){
     expect(grocery.render).to.be.a('function');
@@ -80,5 +80,13 @@ describe( 'render method', function (){
   });
 
 
+});
+
+
+describe('ShoppingList Class', function(){
+  var myShopList = ShoppingList;
+  it('should be a Class', function(){
+      expect( myShopList ).to.be.a('function');
+  });
 });
 
