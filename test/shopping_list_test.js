@@ -83,7 +83,7 @@ describe( 'render method', function (){
 
 describe('ShoppingList Class', function(){
   var myShopList = ShoppingList;
-  var list = new ShoppingList('[]');
+  var list = new ShoppingList();
 
   it('should be a Class', function(){
       expect( myShopList ).to.be.a('function');
