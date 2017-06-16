@@ -5,6 +5,10 @@ class ShoppingList {
     this.items = [];
 
   }
+
+  addItem(item){
+    this.items.push(item);
+  }
 }
 
 
