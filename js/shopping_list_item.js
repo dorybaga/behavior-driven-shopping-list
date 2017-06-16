@@ -12,6 +12,28 @@ class ShoppingListItem {
   uncheck(){
     this.is_done = false;
   }
+
+  render(){
+    // console.log("render");
+    // var list = document.createElement('li');
+    // list.className = "completed_${ this.is_done }";
+
+    // var listItem = document.createElement('span');
+    // listItem.innerHTML = this.name;
+    // list.appendChild(listItem);
+
+    // var listDescrip = document.createElement('span');
+    // listDescrip.innerHTML = this.description;
+    // list.appendChild(listDescrip);
+
+    // console.log(list);
+    // return list;
+
+    return `<li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li>`;
+
+
+  }
+
 }
 
 
