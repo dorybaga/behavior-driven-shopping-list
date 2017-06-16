@@ -114,14 +114,37 @@ describe('addItem method', function(){
 
   it('should add item to items array', function(){
     list.addItem(item, item);
-    expect (list.items[0]).to.deep.equal(item);
+    expect (list.items[0] instanceof ShoppingListItem).to.equal(true);
   });
 
-  it('should not add the item to the items array if not an instance of ShoppingListItem', function(){
-    expect(list.addItem('water')).to.throw();
+  it.skip('should not add the item to the items array if not an instance of ShoppingListItem', function(){
+    var notItem = 12;
+    expect(list.addItem(notItem)).to.be.an('error');
     // expect(item).to.be.an.instanceof(ShoppingListItem);
   });
 
+});
+
+describe('removeItem method', function(){
+  var list;
+  var item = new ShoppingListItem('onion', 'produce', false);
+  var item2 = new ShoppingListItem('garlic', 'produce', false);
+
+  beforeEach(function(){
+    list = new ShoppingList();
+    list.addItem(item);
+    list.addItem(item2);
+
+  });
+
+
+  it( 'removeItem is a function', function(){
+    expect( list.removeItem ).to.equal('function');
+  });
+  it( 'removeItem accepts one argument', function(){
+    list.removeItem( 'onion', 'garlic' );
+    expect( list.items ).to.deep.equal([item2]);
+  } );
 });
 
 

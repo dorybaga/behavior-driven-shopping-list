@@ -7,7 +7,12 @@ class ShoppingList {
   }
 
   addItem(item){
-    this.items.push(item);
+    if( item instanceof ShoppingListItem ){
+      console.log(`${item} is item`);
+      this.items.push(item);
+    } else {
+      throw new Error('Error');
+    }
   }
 }
 
