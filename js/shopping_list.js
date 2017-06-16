@@ -16,12 +16,15 @@ class ShoppingList {
   }
 
   removeItem(item){
-    for(var i = 0; i < this.items.length; i++){
-      if (this.items[i].name === item){
-        this.items.splice(i, 1);
+    if (item === undefined){
+      this.items.pop();
+    } else {
+      for(var i = 0; i < this.items.length; i++){
+        if (this.items[i].name === item){
+          this.items.splice(i, 1);
+        }
       }
     }
-      console.log(this.items);
   }
 }
 
