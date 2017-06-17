@@ -32,4 +32,14 @@ class ShoppingList {
       }
     }
   }
+
+  render(){
+    return `<ul> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li>
+    </ul>`
+  }
+
+
+
 }
+
+
