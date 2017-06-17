@@ -183,4 +183,11 @@ describe('ShoppingList render method', function(){
     expect(list.render).to.be.a('function');
   });
 
+  it( 'render should return ...', function(){
+    expect(list.render()).to.equal( '<ul> <li class="completed_false"><span>onion</span><span>produce</span></li><li class="completed_false"><span>garlic</span><span>produce</span></li></ul>' );
+  });
+
+
+
+
 });
