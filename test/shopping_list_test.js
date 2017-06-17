@@ -5,7 +5,7 @@ var should = chai.should();
 var ShoppingList = require('../js/shopping_list.js');*/
 
 describe('ShoppingListItem Class', function(){
-  var shopList = ShoppingListItem;
+  shopList = ShoppingListItem;
   var grocery;
 
   beforeEach( function (){
@@ -157,12 +157,30 @@ describe('removeItem method', function(){
     expect(list.items).to.deep.equal([item, item2]);
   });
 
-  it('item should be instance of ShoppingListItem', function(){
-    item.removeItem("carrot");
-    expect(item.removeItem).to.throw("Error");
+  it.skip('item should be instance of ShoppingListItem', function(){
+    var testRemoveItemError = list.removeItem('carrot');
+    console.log(testRemoveItemError);
+    expect(testRemoveItemError).to.throw("Error");
   });
 
 });
 
+/*- ShoppingList has a method named `render`
+  - calling the instance's `render` method will concatenate the result of calling `render()` on each item in this object's `items` array, wrapping it in a `<ul>` tags, and returning an html formatted string. ex: `<ul>...[all the li elements from ShoppingListItem.render()]...</ul>`*/
 
+describe('ShoppingList render method', function(){
 
+  var item = new ShoppingListItem('onion', 'produce', false);
+  var item2 = new ShoppingListItem('garlic', 'produce', false);
+
+  beforeEach(function(){
+    list = new ShoppingList();
+    list.addItem(item);
+    list.addItem(item2);
+  });
+
+  it('render should be a function', function(){
+    expect(list.render).to.be.a('function');
+  });
+
+});
