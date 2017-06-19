@@ -26,11 +26,12 @@ class ShoppingList {
           isItemInItems = true;
         }
       }
-      if(isItemInItems === false){
-        throw new Error('Error');
+/*      if(isItemInItems === false){
+      //throw new Error('ERROR');
 
-      }
+      }*/
     }
+    return isItemInItems;
   }
 
   render(){
