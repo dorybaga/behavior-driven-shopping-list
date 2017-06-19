@@ -34,12 +34,20 @@ class ShoppingList {
   }
 
   render(){
-    return `<ul> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li>
-    </ul>`
+    var renderedElements = "<ul>";
+    for( var i = 0; i < this.items.length;i++ ){
+      renderedElements += this.items[i].render();
+    }
+    renderedElements += "</ul>";
+    console.log( renderedElements );
+    return renderedElements;
+    /*return `<li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li>
+    </ul>`*/
   }
 
 
 
 }
+
 
 
