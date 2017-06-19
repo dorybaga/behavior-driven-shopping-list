@@ -50,5 +50,5 @@ class ShoppingList {
 
 }
 
-
+console.log( 'shoppingLists connected' );
 
