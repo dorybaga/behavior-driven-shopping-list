@@ -36,6 +36,8 @@ class ShoppingListItem {
 
 }
 
+console.log( 'ShoppingListItem connected' );
+
 
 
 
