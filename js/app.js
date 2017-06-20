@@ -16,8 +16,10 @@ Commit and push your work*/
 ( function (){
 
   function add_to_shopping_list (){
+    var getNameOfItem = document.querySelector( '#itemNameField' ).value;
+    var getDescriptionOfItem = document.querySelector( '#itemDescriptionField' ).value;
+    console.log( getNameOfItem, getDescriptionOfItem );
 
-    console.log( 'adding to shopping list' );
 
   }
 
@@ -38,8 +40,6 @@ Commit and push your work*/
 
   var renderTest = myShoppingList.render();
   console.log( 'renderTest', renderTest );
- /*
-  console.log( 'testing anchor', putRenderTestInContentDiv );*/
   var renderTarget = document.getElementById( 'content' );
   renderTarget.innerHTML = renderTest;
 } )();
