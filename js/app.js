@@ -16,9 +16,17 @@ Commit and push your work*/
 ( function (){
 
   function add_to_shopping_list (){
+
+    //handles getting data from the form and adding it to myShoppingList.items array.
     var getNameOfItem = document.querySelector( '#itemNameField' ).value;
     var getDescriptionOfItem = document.querySelector( '#itemDescriptionField' ).value;
-    console.log( getNameOfItem, getDescriptionOfItem );
+    var newGroceryItem = new ShoppingListItem( getNameOfItem, getDescriptionOfItem, false );
+    myShoppingList.addItem( newGroceryItem );
+
+    //rerenders content area with myShoppingList.items array items.
+    var renderTest = myShoppingList.render();
+    var renderTarget = document.getElementById( 'content' );
+    renderTarget.innerHTML = renderTest;
 
 
   }
@@ -31,15 +39,5 @@ Commit and push your work*/
 
   //create instances and stuff down here
   var myShoppingList = new ShoppingList();
-  console.log( myShoppingList );
 
-  var onion = new ShoppingListItem( 'onion', 'produce', false );
-  var garlic = new ShoppingListItem( 'garlic', 'produce', false );
-  myShoppingList.addItem( onion );
-  myShoppingList.addItem( garlic );
-
-  var renderTest = myShoppingList.render();
-  console.log( 'renderTest', renderTest );
-  var renderTarget = document.getElementById( 'content' );
-  renderTarget.innerHTML = renderTest;
 } )();
