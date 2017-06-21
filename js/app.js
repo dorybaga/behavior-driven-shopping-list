@@ -40,4 +40,23 @@ Commit and push your work*/
   //create instances and stuff down here
   var myShoppingList = new ShoppingList();
 
+
+  //how to assign idx to each shopping list item...
+  //not sure if this structure will work..
+  function changeCheckedStatus (idx, checkbox){
+    var checkBox = document.getElementByClassName("checkbox");
+    checkBox.addEventListener("change", function(){
+      if(this.checked === true){
+        console.log("checked");
+        // run check()
+      } else if(this.checked === false){
+        console.log("not checked");
+        // run uncheck()
+      }
+    });
+  }
+
+
+
+
 } )();
