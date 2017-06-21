@@ -31,9 +31,12 @@ class ShoppingListItem {
     // var checkbox = document.createElement("INPUT");
     // checkbox.setAttribute("type", "checkbox");
 
-    return `<li class = "completed_${this.is_done}"><input type = "checkbox" class = "checkbox"> <span>${this.name} : </span>
+    // how to reference function in app.js?? for on click...
+    return `<li class = "completed_${this.is_done}"><input type = "checkbox" class = "checkbox" onclick = "changeCheckedStatus()"> <span>${this.name} : </span>
       <span>${this.description}</span>
     </li>`;
+
+
   }
 
 }
