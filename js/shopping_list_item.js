@@ -33,7 +33,7 @@ class ShoppingListItem {
 
     // how to reference function in app.js?? for on click...
     return `<li id ="${i}" class = "completed_${this.is_done}"><input type = "checkbox" class = "checkbox" ${this.is_done ? 'checked' : ''} > <span>${this.name} : </span>
-      <span>${this.description}</span>
+      <span>${this.description}</span><button class = 'deleteButton' type="button">X</button>
     </li>`;
 
 
