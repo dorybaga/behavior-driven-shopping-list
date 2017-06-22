@@ -21,35 +21,27 @@
     var renderTarget = document.getElementById( 'content' );
     renderTarget.innerHTML = renderTest;
 
-    var appendCheckBoxToItems = document.getElementsByClassName("checkbox");
-
-    for( var i = 0; i < appendCheckBoxToItems.length; i++ ){
-      appendCheckBoxToItems[i].addEventListener( 'change', function ( event ){
+    var attachListenerToCheckbox = document.getElementsByClassName("checkbox");
+    var attachListenerToDeleteButton = document.querySelectorAll('.deleteButton');
+    for( var i = 0; i < attachListenerToCheckbox.length; i++ ){
+      attachListenerToCheckbox[i].addEventListener( 'change', function ( event ){
         var idOfItem = event.target.parentNode.id;
         var checkbox = event.target;
         changeCheckedStatus( idOfItem, checkbox );
       } );
+      attachListenerToDeleteButton[i].addEventListener( 'click', function( event ){
+        var idOfItem = event.target.parentNode.id;
+        removeItemButtonClicked( idOfItem );
+      } );
     }
   }
-
-
-/*
-add checkbox to render method of ShoppingListItem.
-make something that sticks ids on the elements
-add eventListener to the checkbox that call changeCheckedStatus( idx, checkbox )
-changedCheckedStatus() finds shoppingListItem element based on idx
-determine if checkbox is checked or not
-if checked invoke shoppingListItem.check().
-if not checked invoke shoppingListItem.uncheck().
-*/
 
   //how to assign idx to each shopping list item...
   //not sure if this structure will work..
   function changeCheckedStatus (idx, checkbox){
     /*var checkBox = document.getElementByClassName("checkbox");
     checkBox.addEventListener("change", function(){*/
-    var listArrayItem = myShoppingList.items[idx];
-    console.log( 'array equiv', listArrayItem );
+    var listArrayItem = myShoppingList.items[ idx ];
     if(checkbox.checked === true){
       console.log("checked");
       listArrayItem.check();
@@ -59,9 +51,17 @@ if not checked invoke shoppingListItem.uncheck().
       listArrayItem.uncheck();
       // run uncheck()
     }
-    console.log( 'array equiv after', listArrayItem );
       //console.log( this.checked );
   }//);
+
+  function removeItemButtonClicked( idx ){
+    console.log( `deleting ${ idx }` );
+    var listArrayItem = myShoppingList.items[ idx ].name;
+    console.log( listArrayItem );
+    myShoppingList.removeItem( listArrayItem );
+    console.log( myShoppingList.items );
+
+  }
 
   //this part handles all the dom/event handler stuff
 
@@ -78,9 +78,13 @@ if not checked invoke shoppingListItem.uncheck().
 /*
   modify ShoppingListItem.render() to include:
     button element w/ label x.
-  add eventlistener to this button that calls removeItemButtonClicked( idk ) on click.
+  add eventlistener to this button that calls removeItemButtonClicked( idx ) on click.
   make removeItemButtonClicked()
+
     finds the ShoppingListItem using idx.
     calls shopping_list.removeItem(), passing in item from previous line.
   rerender shopping list.
+
 */
+
+CURRENT PROBLEM IS THAT myShoppingList.REMOVEITEM DELETES THE WHOLE ITEMS ARRAY?
