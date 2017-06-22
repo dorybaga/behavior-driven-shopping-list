@@ -28,10 +28,12 @@
     var appendCheckBoxToItems = document.getElementsByClassName("checkbox");
 
     for( var i = 0; i < appendCheckBoxToItems.length; i++ ){
-      appendCheckBoxToItems[i].addEventListener( 'change', changeCheckedStatus( i, appendCheckBoxToItems[i] ) );
-
+      appendCheckBoxToItems[i].addEventListener( 'change', function (){
+        changeCheckedStatus( i, appendCheckBoxToItems[i]);
+        } );
     }
   }
+
 
   //how to assign idx to each shopping list item...
   //not sure if this structure will work..
