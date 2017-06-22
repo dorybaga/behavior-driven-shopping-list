@@ -9,10 +9,6 @@
     var newGroceryItem = new ShoppingListItem( targetNameOfItemField.value, targetDescriptionOfItemField.value, false );
     myShoppingList.addItem( newGroceryItem );
 
-    //rerenders content area with myShoppingList.items array items.
-/*    var renderTest = myShoppingList.render();
-    var renderTarget = document.getElementById( 'content' );
-    renderTarget.innerHTML = renderTest;*/
     renderContent();
 
     //clears input fields.
@@ -32,9 +28,6 @@
         var idOfItem = event.target.parentNode.id;
         var checkbox = event.target;
         changeCheckedStatus( idOfItem, checkbox );
-      /*event.target.parentNode.id
-
-      gets the id of the parent(li) of the checkbox.*/
       } );
     }
   }
@@ -48,9 +41,8 @@ changedCheckedStatus() finds shoppingListItem element based on idx
 determine if checkbox is checked or not
 if checked invoke shoppingListItem.check().
 if not checked invoke shoppingListItem.uncheck().
-
-
 */
+
   //how to assign idx to each shopping list item...
   //not sure if this structure will work..
   function changeCheckedStatus (idx, checkbox){
@@ -82,3 +74,13 @@ if not checked invoke shoppingListItem.uncheck().
 
 
 } )();
+
+/*
+  modify ShoppingListItem.render() to include:
+    button element w/ label x.
+  add eventlistener to this button that calls removeItemButtonClicked( idk ) on click.
+  make removeItemButtonClicked()
+    finds the ShoppingListItem using idx.
+    calls shopping_list.removeItem(), passing in item from previous line.
+  rerender shopping list.
+*/
