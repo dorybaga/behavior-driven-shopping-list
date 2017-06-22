@@ -52,29 +52,11 @@
   //this part handles all the dom/event handler stuff
 
   var attachListenerToAddItemButton = document.querySelector( '#add_shopping_list_item_button' );
-  attachListenerToAddItemButton.addEventListener( 'click', add_to_shopping_list(  ) );
+  attachListenerToAddItemButton.addEventListener( 'click', add_to_shopping_list );
 
 
   //create instances and stuff down here
   var myShoppingList = new ShoppingList();
-
-  //how to assign idx to each shopping list item...
-  //not sure if this structure will work..
-  function changeCheckedStatus (idx, checkbox){
-/*    var checkBox = document.getElementByClassName("checkbox");
-    checkBox.addEventListener("change", function(){*/
-      if(this.checked === true){
-        console.log("checked");
-        // run check()
-      } else if(this.checked === false){
-        console.log("not checked");
-        // run uncheck()
-      }
-/*    });
-*/  }
-
-
-
 
 
 } )();
