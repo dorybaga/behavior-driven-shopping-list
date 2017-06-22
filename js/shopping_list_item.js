@@ -13,7 +13,7 @@ class ShoppingListItem {
     this.is_done = false;
   }
 
-  render(){
+  render(i){
     // console.log("render");
     // var list = document.createElement('li');
     // list.className = "completed_${ this.is_done }";
@@ -32,7 +32,7 @@ class ShoppingListItem {
     // checkbox.setAttribute("type", "checkbox");
 
     // how to reference function in app.js?? for on click...
-    return `<li class = "completed_${this.is_done}"><input type = "checkbox" class = "checkbox" > <span>${this.name} : </span>
+    return `<li id ="${i}" class = "completed_${this.is_done}"><input type = "checkbox" class = "checkbox" ${this.is_done ? 'checked' : ''} > <span>${this.name} : </span>
       <span>${this.description}</span>
     </li>`;
 
