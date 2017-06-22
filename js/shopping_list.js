@@ -40,7 +40,6 @@ class ShoppingList {
       renderedElements += this.items[i].render(i);
     }
     renderedElements += "</ul>";
-    console.log( renderedElements );
     return renderedElements;
     /*return `<li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li> <li class="completed_${this.is_done}"><span>${this.name}</span><span>${this.description}</span></li>
     </ul>`*/
