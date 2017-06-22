@@ -28,26 +28,46 @@
     var appendCheckBoxToItems = document.getElementsByClassName("checkbox");
 
     for( var i = 0; i < appendCheckBoxToItems.length; i++ ){
-      appendCheckBoxToItems[i].addEventListener( 'change', function (){
-        changeCheckedStatus( i, appendCheckBoxToItems[i]);
-        } );
+      appendCheckBoxToItems[i].addEventListener( 'change', function ( event ){
+        var idOfItem = event.target.parentNode.id;
+        var checkbox = event.target;
+        changeCheckedStatus( idOfItem, checkbox );
+      /*event.target.parentNode.id
+
+      gets the id of the parent(li) of the checkbox.*/
+      } );
     }
   }
 
 
+/*
+add checkbox to render method of ShoppingListItem.
+make something that sticks ids on the elements
+add eventListener to the checkbox that call changeCheckedStatus( idx, checkbox )
+changedCheckedStatus() finds shoppingListItem element based on idx
+determine if checkbox is checked or not
+if checked invoke shoppingListItem.check().
+if not checked invoke shoppingListItem.uncheck().
+
+
+*/
   //how to assign idx to each shopping list item...
   //not sure if this structure will work..
   function changeCheckedStatus (idx, checkbox){
-    console.log( arguments );
     /*var checkBox = document.getElementByClassName("checkbox");
     checkBox.addEventListener("change", function(){*/
-    if(this.value === 'on'){
+    var listArrayItem = myShoppingList.items[idx];
+    console.log( 'array equiv', listArrayItem );
+    if(checkbox.checked === true){
       console.log("checked");
+      listArrayItem.check();
       // run check()
-    } else if(this.value === 'off'){
+    } else if(checkbox.checked === false){
       console.log("not checked");
+      listArrayItem.uncheck();
       // run uncheck()
     }
+    console.log( 'array equiv after', listArrayItem );
       //console.log( this.checked );
   }//);
 
