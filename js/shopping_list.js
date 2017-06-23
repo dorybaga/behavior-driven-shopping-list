@@ -7,8 +7,7 @@ class ShoppingList {
   }
 
   addItem(item){
-    if( item instanceof ShoppingListItem ){
-      //console.log(`${item} is item`);
+    if( ( item instanceof ShoppingListItem ) && ( item.name !== '' ) ){
       this.items.push(item);
     } else {
       throw new Error('Error');
