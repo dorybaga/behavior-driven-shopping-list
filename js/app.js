@@ -7,13 +7,17 @@
     var targetNameOfItemField = document.querySelector( '#itemNameField' );
     var targetDescriptionOfItemField = document.querySelector( '#itemDescriptionField' );
     var newGroceryItem = new ShoppingListItem( targetNameOfItemField.value, targetDescriptionOfItemField.value, false );
+
     myShoppingList.addItem( newGroceryItem );
 
     renderContent();
 
-    //clears input fields.
-    targetNameOfItemField.value = '';
-    targetDescriptionOfItemField.value = '';
+    clearEntryFields( targetNameOfItemField, targetDescriptionOfItemField );
+  }
+
+  function clearEntryFields ( targetNameField, targetDescriptionField ){
+    targetNameField.value = '';
+    targetDescriptionField.value = '';
   }
 
   function renderContent (){
