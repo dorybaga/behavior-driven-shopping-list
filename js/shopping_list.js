@@ -35,7 +35,7 @@ class ShoppingList {
   }
 
   render(){
-    var renderedElements = "<ul>";
+    var renderedElements = "<ul class='list'>";
     for( var i = 0; i < this.items.length;i++ ){
       renderedElements += this.items[i].render(i);
     }
