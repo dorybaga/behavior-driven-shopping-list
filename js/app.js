@@ -54,13 +54,20 @@
       //console.log( this.checked );
   }//);
 
-  function removeItemButtonClicked( idx ){
+  function removeItemButtonClicked ( idx ){
     console.log( `deleting ${ idx }` );
     var listArrayItem = myShoppingList.items[ idx ].name;
     console.log( listArrayItem );
     myShoppingList.removeItem( listArrayItem );
     console.log( myShoppingList.items );
 
+    deleteThisItem( idx );
+  }
+
+  function deleteThisItem ( idx ){
+    var targetList = document.querySelector( '.list' );
+    targetList.removeChild( targetList.childNodes[ idx ] );
+    renderContent();
   }
 
   //this part handles all the dom/event handler stuff
